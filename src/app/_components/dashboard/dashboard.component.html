@@ -1,0 +1,247 @@
+<!-- sidebar panel -->
+<layout></layout>
+<!-- end sidebar panel -->
+
+<!-- page content -->
+<div id="main" class="right_col" role="main">
+  <!-- top tiles -->
+  <div class="row total_count">
+    <div class="col-md-3 col-sm-3 col-xs-6 total-sales">
+      <div class="total-col">
+        <div class="total_icon"><i class="fa fa-dollar"></i></div>
+        <div class="total_info">
+          <p class="title">Total Sales</p>
+          <p class="count currency"><span>$</span>215,645</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-3 col-xs-6 total-quete">
+      <div class="total-col">
+        <div class="total_icon"><i class="fa fa-file-text-o"></i></div>
+        <div class="total_info">
+          <p class="title">New Quete</p>
+          <p class="count">223,543</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-3 col-xs-6 total-orders">
+      <div class="total-col">
+        <div class="total_icon"><i class="fa fa-database"></i></div>
+        <div class="total_info">
+          <p class="title">Orders</p>
+          <p class="count">23,414</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 col-sm-3 col-xs-6 total-products">
+      <div class="total-col">
+        <div class="total_icon"><i class="fa fa-cube"></i></div>
+        <div class="total_info">
+          <p class="title">Products</p>
+          <p class="count">19,081</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /top tiles -->
+
+  <!-- graph-dashboard -->
+  <div class="row graph-dashboard">
+    <div class="col-md-9 col-sm-12 col-xs-12">
+      <div class="x_panel">
+        <div class="x_title">
+          <h2>Product Visitors</h2>
+          <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+          <canvas baseChart [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-3 col-sm-12 col-xs-12">
+      <div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-6">
+          <div class="x_panel">
+            <div class="x_content">
+              <h4>Weekly Sales & Expence</h4>
+              <!-- <canvas id="lineChartMini"></canvas> -->
+              <canvas baseChart [datasets]="MinilineChartData" [labels]="MinilineChartLabels" [options]="MinilineChartOptions" [colors]="MinilineChartColors" [legend]="MinilineChartLegend" [chartType]="lineChartType"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 col-sm-6 col-xs-6">
+          <div class="x_panel">
+            <div class="x_content">
+              <h4>Total Charge & Profit </h4>
+              <!-- <canvas id="lineChartMini2"></canvas> -->
+              <canvas baseChart [datasets]="Mini2lineChartData" [labels]="Mini2lineChartLabels" [options]="Mini2lineChartOptions" [colors]="Mini2lineChartColors" [legend]="MinilineChartLegend" [chartType]="lineChartType"></canvas>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- end graph-dashboard -->
+
+  <!-- two-colums -->
+  <div class="row two-colums">
+    <div class="col-md-6 first">
+      <div class="x_panel">
+        <div class="x_title">
+          <h2>Website Traffic</h2>
+          <span class="icon"><i class="fa fa-refresh" aria-hidden="true"></i></span>
+          <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+          <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-7">
+              <!-- <div class="chart_inner_text">
+              <h5>Registered</h5>
+              <span class="count">9012</span>
+            </div> -->
+              <!-- <canvas id="doughnutChart"></canvas> -->
+              <canvas baseChart [data]="pieChartData" [chartType]="pieChartType"></canvas>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-5">
+              <div class="legend">
+                <p><i class="fa fa-square visitors"></i>Visitors </p>
+                <p><i class="fa fa-square bounce"></i>Bounce </p>
+                <p><i class="fa fa-square registered"></i>Registered </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="chart-info">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 two">
+      <div class="x_panel">
+        <div class="x_content">
+          <div class="image-background">
+            <img src="assets/images/fon.jpg">
+          </div>
+          <div class="center-profile">
+            <div class="info-profile">
+              <h3>Ononto Jalil</h3>
+              <h4>Joker in Dhalliwood</h4>
+              <div class="img-profile">
+                <img src="assets/images/user.png" class="img-circle profile_img">
+              </div>
+            </div>
+          </div>
+          <div class="info-content">
+            <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+              aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."</p>
+          </div>
+          <div class="row total-colum">
+            <div class="col-md-4 col-sm-4 col-xs-4 colum">
+              <span class="count">179</span>
+              <span class="title">Customers</span>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-4 colum">
+              <span class="count">19K</span>
+              <span class="title">Products</span>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-4 colum">
+              <span class="count">15k</span>
+              <span class="title">Followers</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- end two-colums -->
+
+  <!-- ratings -->
+  <div class="row custom-ratings">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="x_panel">
+        <div class="x_title">
+          <h2>Custom Ratings</h2>
+          <span class="icon">
+          <span class="title">2,45,567 Votes</span>
+          <i class="fa fa-refresh" aria-hidden="true"></i>
+          </span>
+          <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+          <div class="widget_summary">
+            <div class="w_left w_35">
+              <p>The product is Awesome</p>
+            </div>
+            <div class="w_center w_45">
+              <div class="progress">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 67%;">
+                  <span class="sr-only">67% Complete</span>
+                </div>
+              </div>
+            </div>
+            <div class="w_right w_20">
+              <span>67%</span>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          <div class="widget_summary">
+            <div class="w_left w_35">
+              <p>Yeah I'm Satisfield with it</p>
+            </div>
+            <div class="w_center w_45">
+              <div class="progress">
+                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%;">
+                  <span class="sr-only">25% Complete</span>
+                </div>
+              </div>
+            </div>
+            <div class="w_right w_20">
+              <span>25%</span>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          <div class="widget_summary">
+            <div class="w_left w_35">
+              <p>Average product, not bad</p>
+            </div>
+            <div class="w_center w_45">
+              <div class="progress">
+                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="7" aria-valuemin="0" aria-valuemax="100" style="width: 7%;">
+                  <span class="sr-only">7% Complete</span>
+                </div>
+              </div>
+            </div>
+            <div class="w_right w_20">
+              <span>7%</span>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          <div class="widget_summary">
+            <div class="w_left w_35">
+              <p>Not usfull at all it Sucks</p>
+            </div>
+            <div class="w_center w_45">
+              <div class="progress">
+                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 15%;">
+                  <span class="sr-only">15% Complete</span>
+                </div>
+              </div>
+            </div>
+            <div class="w_right w_20">
+              <span>15%</span>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

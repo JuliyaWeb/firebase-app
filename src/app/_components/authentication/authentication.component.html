@@ -1,0 +1,88 @@
+<div class="login">
+
+  <div class="login_wrapper">
+    <!-- [ngClass]="{'active': isActive} -->
+    <div class="animate form login_form" *ngIf="isActive">
+      <section class="login_content">
+        <form name="login" (submit)="loginWithEmail($event, email.value, password.value)">
+          <h1>Login Form</h1>
+          <div *ngIf="success" class="alert alert-success" role="alert">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            {{success}}
+          </div>
+          <div *ngIf="error" class="alert alert-warning" role="alert">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <span class="sr-only">Error:</span>
+            {{error}}
+          </div>
+          <div class="field">
+            <i class="fa fa-user"></i>
+            <input #email type="text" class="form-control" placeholder="Email adress" required="" />
+          </div>
+          <div class="field">
+            <i class="fa fa-lock"></i>
+            <input #password type="password" class="form-control" placeholder="Password" required="" />
+          </div>
+          <div>
+            <button class="btn btn-default submit" type="submit">Log in</button>
+          </div>
+
+          <div class="clearfix"></div>
+
+          <div class="separator">
+            <span class="loginWithGoogle" (click)="loginWithGoogle()"><i class="fa fa-google" aria-hidden="true"></i> Login With Google</span>
+            <p class="change_link">New to site?
+              <span (click)="displayForm()" class="to_register"> Create Account </span>
+            </p>
+
+            <div class="clearfix"></div>
+            <br />
+
+            <div>
+              <p>©2017 All Rights Reserved. Smart! is a Angular application. Privacy and Terms</p>
+            </div>
+          </div>
+        </form>
+      </section>
+    </div>
+
+    <div id="register" class="animate form registration_form" *ngIf="!isActive">
+      <section class="login_content">
+        <form name="register" (submit)="register($event, name.value, email.value, password.value)">
+          <h1>Create Account</h1>
+          <div *ngIf="error" class="alert alert-warning" role="alert">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <span class="sr-only">Error:</span>
+            {{error}}
+          </div>
+          <div>
+            <input #name type="text" class="form-control" placeholder="Username" required="" />
+          </div>
+          <div>
+            <input #email type="email" class="form-control" placeholder="Email" required="" />
+          </div>
+          <div>
+            <input #password type="password" class="form-control" placeholder="Password" required="" />
+          </div>
+          <div>
+            <button class="btn btn-default submit" type="submit">Register</button>
+          </div>
+
+          <div class="clearfix"></div>
+
+          <div class="separator">
+            <p class="change_link">Already a member ?
+              <span (click)="displayForm()" class="to_register"> Log in </span>
+            </p>
+
+            <div class="clearfix"></div>
+            <br />
+            <div>
+              <p>©2016 All Rights Reserved. Alela! is a Bootstrap 3 template. Privacy and Terms</p>
+            </div>
+          </div>
+        </form>
+      </section>
+    </div>
+  </div>
+</div>

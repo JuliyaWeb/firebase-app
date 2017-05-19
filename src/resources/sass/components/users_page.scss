@@ -1,0 +1,94 @@
+.login {
+  .field {
+    position: relative;
+
+    .fa {
+      position: absolute;
+      left: 10px;
+      top: 10px;
+    }
+
+    .form-control {
+      padding-left: 25px;
+    }
+  }
+
+  .form {
+    opacity: 1;
+
+    .submit {
+      width: 100%;
+      font-size: 21px;
+      background: #1184a7;
+      color: #fff;
+      border: none;
+    }
+
+    .loginWithGoogle {
+      background: #fff;
+      padding: 10px 20px;
+      display: block;
+      color: #2a3f54;
+      font-size: 14px;
+      margin: 10px 0;
+    }
+  }
+
+  .change_link {
+    span {
+      cursor: pointer;
+    }
+  }
+}
+
+.users {
+  .user-name {
+    text-transform: capitalize;
+  }
+}
+
+.user-detail {
+  font-size: 14px;
+  line-height: 1.4;
+
+  .x_title {
+    border-bottom: 2px solid #E6E9ED;
+  }
+
+  .row-line {
+    margin-bottom: 10px;
+
+    .label-title {
+      width: 100px;
+      display: inline-block;
+      font-weight: bold;
+    }
+
+    .profile-value {
+      text-transform: capitalize;
+    }
+  }
+}
+
+.profile-main-info {
+  text-align: center;
+
+  .profile-picture {
+    img {
+      border-radius: 50%;
+    }
+  }
+
+  .profile-name {
+    text-transform: capitalize;
+    font-size: 26px;
+    font-weight: bold;
+  }
+
+  .profile-meta {
+    i {
+      margin-right: 8px;
+      color: #19bfe6;
+    }
+  }
+}

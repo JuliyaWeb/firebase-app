@@ -1,0 +1,61 @@
+<!-- sidebar panel -->
+<layout></layout>
+<!-- end sidebar panel -->
+
+<!-- page content -->
+<div id="main" class="right_col" role="main">
+  <div class="row user-detail">
+    <div class="col-md-3 col-sm-3">
+      <div class="x_panel">
+        <div class="x_content profile-main-info">
+          <div class="profile-picture">
+            <img src="{{user.picture.large}}" alt="{{user.name.first}}">
+          </div>
+          <h2 class="profile-name">{{user.name.last}} {{user.name.first}}</h2>
+          <hr />
+          <div class="profile-meta">
+            <p class="profile-email"><i class="fa fa-envelope"></i>{{user.email}}</p>
+            <p class="profile-phone"><i class="fa fa-phone"></i>{{user.phone}}</p>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-sm btn-primary" type="button" (click)="backGo()"><i class="fa fa-reply"></i> Back to the Users</button>
+    </div>
+    <div class="col-md-9 col-sm-9">
+      <div class="x_panel">
+        <div class="x_title">
+          <h2>Profile details</h2>
+          <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+          <div class="row-line">
+            <span class="label-title">User Login:</span>
+            <span class="profile-value">{{user.login.username}}</span>
+          </div>
+          <div class="row-line">
+            <span class="label-title">Gender:</span>
+            <span class="profile-value">{{user.gender}}</span>
+          </div>
+          <div class="row-line">
+            <span class="label-title">Location:</span>
+            <span class="profile-value">{{user.location.city}} {{user.location.state}} {{user.location.street}}</span>
+          </div>
+          <div class="row-line">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+              in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+              in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+              in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<!-- sidebar panel -->
+<layout></layout>
+<!-- end sidebar panel -->
+
+<!-- page content -->
+<div id="main" class="right_col" role="main">
+  <div class="row users">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="x_panel">
+        <div class="x_title">
+          <h2>Users</h2>
+          <div class="clearfix"></div>
+        </div>
+
+        <div class="x_content">
+          <div class="table-responsive">
+            <table class="table table-striped jambo_table bulk_action">
+              <thead>
+                <tr class="headings">
+                  <th class="column-title">Picture</th>
+                  <th class="column-title">Full Name </th>
+                  <th class="column-title">Username </th>
+                  <th class="column-title">Email </th>
+                  <th class="column-title">Registered </th>
+                  <th class="column-title no-link last"><span class="nobr">Action</span></th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr class="even pointer" *ngFor="let user of users">
+                  <td><img src="{{user.picture.thumbnail}}"></td>
+                  <td class="user-name">{{user.name.first}}</td>
+                  <td>{{user.login.username}}</td>
+                  <td>{{user.email}}</td>
+                  <td>{{user.registered}}</td>
+                  <td><a (click)="gotoDetail(user)" [routerLink]="'/user/'+ user.id">View</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

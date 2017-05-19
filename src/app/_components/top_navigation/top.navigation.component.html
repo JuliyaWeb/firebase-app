@@ -1,0 +1,28 @@
+<div class="top_nav">
+  <div class="nav_menu">
+    <nav>
+      <div class="wrapper-left">
+        <div class="nav toggle">
+          <a id="menu_toggle" (click)="clicked()"><i class="fa fa-bars"></i></a>
+        </div>
+
+        <div class="nav search">
+          <form action="" autocomplete="on" class="search-form">
+            <input class="search" name="search" type="text" placeholder="What're we looking for ?">
+            <i id="search-icon" class="fa fa-search"></i>
+            <input class="search_submit" value="Rechercher" type="submit">
+          </form>
+        </div>
+      </div>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="" class="info-config"><i class="fa fa-cog"></i></a>
+        </li>
+        <li>
+          <a (click)="SignOut()" class="sign-out"><i class="fa fa-sign-out pull-right "></i></a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
