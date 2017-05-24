@@ -9,6 +9,7 @@ import {ChartsModule} from 'ng2-charts/ng2-charts';
 import {AngularFireModule} from 'angularfire2';
 // Services
 import {AuthService} from "./_services/auth.service";
+import {UserService} from "./_services/user.service";
 // Components
 import {AppComponent} from "./app.component";
 import {LayoutComponent,
@@ -18,8 +19,7 @@ import {LayoutComponent,
   UsersComponent,
   UserDetailComponent,
   AuthenticationComponent } from "./_components/index";
-import { TestComponent } from './_components/test/test.component';
-
+import { DetailComponent } from './_components/detail/detail.component';
 // Firebase export the config
 export const firebaseConfig = {
   apiKey: "AIzaSyCR6H--Afgs62pTd0FFxasYqc3TLIb6l_s",
@@ -48,11 +48,12 @@ export const firebaseConfig = {
     UsersComponent,
     UserDetailComponent,
     AuthenticationComponent,
-    TestComponent
+    DetailComponent,
   ],
   providers: [
     AuthGuard,
-    AuthService
+    AuthService,
+    UserService
   ],
   bootstrap: [
     AppComponent

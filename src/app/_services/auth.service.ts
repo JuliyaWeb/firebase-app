@@ -4,6 +4,7 @@ import {FirebaseObjectFactoryOpts} from "angularfire2/interfaces";
 import {Router} from "@angular/router";
 
 @Injectable()
+
 export class AuthService {
   public messages: FirebaseListObservable<any>;
   public users: FirebaseListObservable<any>;
@@ -111,8 +112,6 @@ export class AuthService {
   */
 
   getUserInfo() {
-    console.log('sss');
-    console.log(this.af.auth.getAuth());
     this.af.auth.subscribe(
       (auth) => {
             console.log(auth);

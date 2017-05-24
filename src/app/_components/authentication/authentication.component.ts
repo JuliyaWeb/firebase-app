@@ -40,6 +40,7 @@ export class AuthenticationComponent {
   register(event, name, email, password) {
     event.preventDefault();
     this.afService.registerUser(email, password).then((user) => {
+      console.log(name);
       this.afService.saveUserInfoFromForm(user.uid, name, email).then(() => {
         this.isActive = true;
         this.success = "You succes registered. Please Login to your account."

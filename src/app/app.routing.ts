@@ -1,9 +1,10 @@
 import {RouterModule, Routes} from "@angular/router";
 import {AuthGuard} from "./_guards/auth.guard";
 import {DashboardComponent,
-        UsersComponent,
-        UserDetailComponent,
-        AuthenticationComponent } from "./_components/index";
+  UsersComponent,
+  UserDetailComponent,
+  AuthenticationComponent,
+  DetailComponent } from "./_components/index";
 
 const appRoutes: Routes = [
   {
@@ -14,7 +15,7 @@ const appRoutes: Routes = [
   {
     path: 'users',
     component: UsersComponent,
-    canActivate: [AuthGuard]
+    // canActivate: [AuthGuard]
   },
   {
     path: 'user/:id',
@@ -23,6 +24,10 @@ const appRoutes: Routes = [
   {
     path: 'login',
     component: AuthenticationComponent
+  },
+  {
+    path: 'test',
+    component: DetailComponent
   },
   {
     path: '',

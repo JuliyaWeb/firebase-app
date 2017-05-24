@@ -7,14 +7,21 @@ import 'rxjs/add/operator/map';
 
 export class UserService {
   private users = new Headers({ 'Content-Type': 'application/json' });
-  private randomUsers: string = 'https://randomuser.me/api/?results=10'; // URL random api
+  private randomUsers: string = 'https://randomuser.me/api/?results=3'; // URL random api
+  private test: string = 'http://smktesting.herokuapp.com'; // URL random api
+
+  user: string = 'Test';
 
   constructor(private http: Http) { }
+
+  getTest() {
+    return this.http.get(this.test + '/api/products/').map((rest)=>{rest.json(), console.log('www=>',rest.json())});
+  };
+
   // Get users from random api
   getUsers() {
     return this.http.get(this.randomUsers)
       .map((res) => {
-        res.json();
         let data = res.json().results;
         for (let key in data) {
           data[key].id = +key + 1;
