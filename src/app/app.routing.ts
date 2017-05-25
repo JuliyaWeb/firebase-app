@@ -3,14 +3,13 @@ import {AuthGuard} from "./_guards/auth.guard";
 import {DashboardComponent,
   UsersComponent,
   UserDetailComponent,
-  AuthenticationComponent,
-  DetailComponent } from "./_components/index";
+  AuthenticationComponent } from "./_components/index";
 
 const appRoutes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
-    canActivate: [AuthGuard]
+    // canActivate: [AuthGuard]
   },
   {
     path: 'users',
@@ -24,10 +23,6 @@ const appRoutes: Routes = [
   {
     path: 'login',
     component: AuthenticationComponent
-  },
-  {
-    path: 'test',
-    component: DetailComponent
   },
   {
     path: '',

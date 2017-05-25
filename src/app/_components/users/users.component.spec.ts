@@ -28,27 +28,19 @@ describe('Service: Users', () => {
     });
   });
 
-  // spyon angular
-
   it('should create a service', inject([UserService], (service: UserService) => {
     expect(service).toBeTruthy();
   }));
 
-  it('should return users', async(inject([UserService, MockBackend, Http], (service: UserService, backend: MockBackend, http) => {
-    let response = new ResponseOptions({
-      body: JSON.stringify(MockUsers)
+  it('should return users', async(inject([UserService, MockBackend], (service, backend) => {
+
+    backend.connections.subscribe(conn => {
+      conn.mockRespond(new Response(new ResponseOptions({ body: JSON.stringify(MockUsers) })));
     });
 
-    const baseResponse = new Response(response);
-
-    backend.connections.subscribe(
-      (c: MockConnection) => c.mockRespond(baseResponse)
-    );
-
-    return service.getUsers().subscribe(data => {
-      console.info('data=>', data);
-      console.info('tests=>', MockUsers.length);
+     service.getUsers().subscribe(data => {
       expect(data.length).toBe(MockUsers.length);
     });
   })))
+
 })

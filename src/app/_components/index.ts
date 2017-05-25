@@ -5,4 +5,3 @@ export * from "./users/users.component";
 export * from "./users/user-detail.component";
 export * from "./authentication/authentication.component";
 export * from "./layout/layout.component";
-export * from "./detail/detail.component";

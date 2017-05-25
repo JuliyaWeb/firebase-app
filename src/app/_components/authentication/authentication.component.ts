@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from "@angular/router";
-import { AuthService } from "../../_services/auth.service"
+import { AuthService } from "../../_services/auth.service";
 
 @Component({
   // moduleId: module.id,
@@ -13,12 +13,12 @@ export class AuthenticationComponent {
   isActive: boolean = true;
 
   constructor(public afService: AuthService, private router: Router) {
+    console.log('u',this.afService.getUserInfo());
   }
 
   loginWithGoogle() {
     this.afService.loginWithGoogle().then((data) => {
       // Send them to the homepage if they are logged in
-      console.log(data);
       this.afService.addUserInfo();
       this.router.navigate(['dashboard']);
     })
@@ -40,7 +40,7 @@ export class AuthenticationComponent {
   register(event, name, email, password) {
     event.preventDefault();
     this.afService.registerUser(email, password).then((user) => {
-      console.log(name);
+
       this.afService.saveUserInfoFromForm(user.uid, name, email).then(() => {
         this.isActive = true;
         this.success = "You succes registered. Please Login to your account."

@@ -19,7 +19,6 @@ import {LayoutComponent,
   UsersComponent,
   UserDetailComponent,
   AuthenticationComponent } from "./_components/index";
-import { DetailComponent } from './_components/detail/detail.component';
 // Firebase export the config
 export const firebaseConfig = {
   apiKey: "AIzaSyCR6H--Afgs62pTd0FFxasYqc3TLIb6l_s",
@@ -48,7 +47,6 @@ export const firebaseConfig = {
     UsersComponent,
     UserDetailComponent,
     AuthenticationComponent,
-    DetailComponent,
   ],
   providers: [
     AuthGuard,

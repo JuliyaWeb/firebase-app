@@ -55,10 +55,21 @@ export class AuthService {
   }
 
   /**
-   *
+   * Add Use rInfo
    */
   addUserInfo() {
     //We saved their auth info now save the rest to the db.
+    this.af.auth.subscribe(
+      (res) => {
+        if (res != null) {
+
+          this.email = res.auth.email;
+          this.displayName = res.auth.displayName;
+
+        }
+      });
+
+
     this.users.push({
       email: this.email,
       displayName: this.displayName
@@ -85,13 +96,10 @@ export class AuthService {
    * @returns {firebase.Promise<void>}
    */
   registerUser(email, password) {
-    console.log(email)
     return this.af.auth.createUser({
       email: email,
       password: password
     });
-
-
   }
 
   /**
@@ -114,7 +122,7 @@ export class AuthService {
   getUserInfo() {
     this.af.auth.subscribe(
       (auth) => {
-            console.log(auth);
+        console.log('sss', auth);
         if (auth != null) {
           return auth;
         }
