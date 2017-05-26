@@ -5,7 +5,7 @@ import {Router} from "@angular/router";
 @Component({
   moduleId: module.id,
   selector: 'top-nav',
-  templateUrl: 'top.navigation.component.html'
+  templateUrl: 'top-navigation.component.html'
 })
 
 export class TopNavigationComponent {

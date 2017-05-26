@@ -13,7 +13,6 @@ export class AuthenticationComponent {
   isActive: boolean = true;
 
   constructor(public afService: AuthService, private router: Router) {
-    console.log('u',this.afService.getUserInfo());
   }
 
   loginWithGoogle() {
@@ -21,7 +20,7 @@ export class AuthenticationComponent {
       // Send them to the homepage if they are logged in
       this.afService.addUserInfo();
       this.router.navigate(['dashboard']);
-    })
+    });
   }
 
   loginWithEmail(event, email, password) {

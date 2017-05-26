@@ -1,6 +1,7 @@
 import {Injectable} from "@angular/core";
-import {AngularFire, AuthProviders, AuthMethods, FirebaseListObservable, FirebaseObjectObservable} from 'angularfire2';
+import {AngularFire, AuthProviders, AuthMethods, FirebaseListObservable, FirebaseObjectObservable, FirebaseAuthState} from 'angularfire2';
 import {FirebaseObjectFactoryOpts} from "angularfire2/interfaces";
+import {Observable} from 'rxjs/Observable';
 import {Router} from "@angular/router";
 
 @Injectable()
@@ -11,14 +12,16 @@ export class AuthService {
   public displayName: string;
   public email: string;
   public user: FirebaseObjectObservable<any>;
-  public currentUser: boolean = false;
+  public uid: string;
+  public currentUser: FirebaseAuthState;
 
   constructor(public af: AngularFire, private router: Router) {
     this.af.auth.subscribe(
       (auth) => {
         if (auth != null) {
           this.user = this.af.database.object('users/' + auth.uid);
-          this.currentUser = true;
+          this.uid = auth.uid;
+          this.currentUser = auth;
         }
       });
 
@@ -28,7 +31,7 @@ export class AuthService {
 
   /**
    * Check if user is logged in
-  */
+   */
   userIsLoggedIn() {
     if (!this.currentUser) {
       this.router.navigate(['/login']);
@@ -81,7 +84,7 @@ export class AuthService {
    * @param text
    */
   sendMessage(text) {
-    var message = {
+    let message = {
       message: text,
       displayName: this.displayName,
       email: this.email,
@@ -117,7 +120,7 @@ export class AuthService {
 
   /**
    * CurrentUser Info
-  */
+   */
 
   getUserInfo() {
     this.af.auth.subscribe(
@@ -138,9 +141,9 @@ export class AuthService {
    */
   loginWithEmail(email, password) {
     return this.af.auth.login({
-      email: email,
-      password: password,
-    },
+        email: email,
+        password: password,
+      },
       {
         provider: AuthProviders.Password,
         method: AuthMethods.Password,

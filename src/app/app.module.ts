@@ -12,13 +12,18 @@ import {AuthService} from "./_services/auth.service";
 import {UserService} from "./_services/user.service";
 // Components
 import {AppComponent} from "./app.component";
-import {LayoutComponent,
+import {
+  LayoutComponent,
   NavbarComponent,
   TopNavigationComponent,
   DashboardComponent,
   UsersComponent,
   UserDetailComponent,
-  AuthenticationComponent } from "./_components/index";
+  AuthenticationComponent,
+  TodoListComponent,
+  TaskFormComponent
+} from "./_components/index";
+
 // Firebase export the config
 export const firebaseConfig = {
   apiKey: "AIzaSyCR6H--Afgs62pTd0FFxasYqc3TLIb6l_s",
@@ -47,6 +52,8 @@ export const firebaseConfig = {
     UsersComponent,
     UserDetailComponent,
     AuthenticationComponent,
+    TodoListComponent,
+    TaskFormComponent
   ],
   providers: [
     AuthGuard,

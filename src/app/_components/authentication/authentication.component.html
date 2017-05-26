@@ -1,7 +1,6 @@
 <div class="login">
 
   <div class="login_wrapper">
-    <!-- [ngClass]="{'active': isActive} -->
     <div class="animate form login_form" *ngIf="isActive">
       <section class="login_content">
         <form name="login" (submit)="loginWithEmail($event, email.value, password.value)">

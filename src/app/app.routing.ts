@@ -1,9 +1,12 @@
 import {RouterModule, Routes} from "@angular/router";
 import {AuthGuard} from "./_guards/auth.guard";
-import {DashboardComponent,
+import {
+  DashboardComponent,
   UsersComponent,
   UserDetailComponent,
-  AuthenticationComponent } from "./_components/index";
+  AuthenticationComponent,
+  TodoListComponent
+} from "./_components/index";
 
 const appRoutes: Routes = [
   {
@@ -14,6 +17,11 @@ const appRoutes: Routes = [
   {
     path: 'users',
     component: UsersComponent,
+    // canActivate: [AuthGuard]
+  },
+  {
+    path: 'todo-list',
+    component: TodoListComponent,
     // canActivate: [AuthGuard]
   },
   {
