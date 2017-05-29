@@ -23,7 +23,6 @@ export class TaskFormComponent implements OnInit {
     if (this.model.title) {
       this.todoServise.createTask(this.model.title);
     }
-    console.log('submit');
     form.onReset();
   }
 

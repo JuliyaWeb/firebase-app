@@ -53,7 +53,7 @@ export const firebaseConfig = {
     UserDetailComponent,
     AuthenticationComponent,
     TodoListComponent,
-    TaskFormComponent
+    TaskFormComponent,
   ],
   providers: [
     AuthGuard,

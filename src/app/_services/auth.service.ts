@@ -125,7 +125,6 @@ export class AuthService {
   getUserInfo() {
     this.af.auth.subscribe(
       (auth) => {
-        console.log('sss', auth);
         if (auth != null) {
           return auth;
         }

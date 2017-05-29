@@ -9,8 +9,8 @@ import { AuthService } from "../../_services/auth.service";
 
 export class NavbarComponent {
   constructor(public afService: AuthService) {
-    console.log('user', this.afService.user);
-    console.log('user', this.afService.currentUser);
+    // console.log('user', this.afService.user);
+    // console.log('user', this.afService.currentUser);
   }
 
 }

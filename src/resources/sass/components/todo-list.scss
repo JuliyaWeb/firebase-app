@@ -1,0 +1,100 @@
+.todo-list {
+  .users-items {
+    margin-top: 30px;
+  }
+
+  .item-group {
+    border: 1px solid #ddd;
+    border-bottom: none;
+  }
+  .task-item {
+    overflow: hidden;
+    display: block;
+    padding: 5px 15px;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+
+    &:nth-child(odd) {
+      background: #f9f9f9;
+    }
+
+    &:hover {
+      background: #ecf8ff;
+    }
+
+    &.completed {
+      .task-item__button .icon {
+        display: block;
+      }
+
+      .task-item__title {
+        text-decoration: line-through;
+        color: #73879C;
+      }
+    }
+
+    .cell {
+      display: inline-block;
+    }
+
+    .task-item__button {
+      height: 21px;
+      width: 21px;
+      background: #fff;
+      display: block;
+      padding: 0;
+      margin: 0 10px 0 0;
+
+      .icon {
+        display: none;
+      }
+
+      &:hover {
+        .icon {
+          display: block;
+          color: #19bfe6;
+        }
+      }
+    }
+
+    .remove {
+      cursor: pointer;
+
+      &:hover {
+        color: red;
+      }
+    }
+
+    .right-col {
+      float: left;
+    }
+
+    .left-col {
+      float: right;
+    }
+  }
+
+  .task-form {
+    .field {
+      padding: 0;
+
+      input {
+        border: 0;
+        width: 100%;
+        box-shadow: none;
+        border-bottom: 1px solid #999;
+      }
+    }
+    .submit {
+      background: none;
+      box-shadow: none;
+      border: none;
+      margin: 0;
+
+      i {
+        color: #19bfe6;
+        font-size: 33px;
+      }
+    }
+  }
+}
