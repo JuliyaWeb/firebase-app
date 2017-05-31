@@ -7,3 +7,5 @@ export * from "./authentication/authentication.component";
 export * from "./layout/layout.component";
 export * from "./todo-list/todo-list.componet";
 export * from "./todo-list/task-form";
+export * from "./todo-list/task-item";
+export * from "./todo-list/task-list";

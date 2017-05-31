@@ -14,28 +14,15 @@
         </div>
         <div class="x_content">
           <!-- item-form -->
-          <task-form></task-form>
+          <task-form (createTask)="this.todoService.createTask($event)"></task-form>
           <!-- end item-form -->
 
           <section class="users-items">
             <div class="item-group" *ngIf="items.length">
-              <div class="task-item" *ngFor="let item of items;" [class.completed]="item.completed">
-                <div class="cell right-col">
-                  <button class="task-item__button" type="button" (click)="toggle(item)">
-                    <span class="icon"><i class="fa fa-check"></i></span>
-                    <!--<span class="icon" *ngIf="item.completed"><i class="fa fa-check"></i></span>-->
-                  </button>
-                </div>
-                <div class="cell">
-                  <div class="task-item__title" tabindex="0">
-                    {{item.title}}
-                  </div>
-                </div>
-                <div class="cell left-col">
-                  <!--<span class="icon"><i class="fa fa-pencil"></i></span>-->
-                  <span class="glyphicon glyphicon-trash remove" aria-hidden="true" (click)="deleteTask(item)"></span>
-                </div>
-              </div>
+              <task-list [items]="items"
+                         (remove)="this.todoService.removeTask($event)"
+                         (update)="this.todoService.updateTask($event.item, $event.changes)">
+              </task-list>
             </div>
             <div class="message" *ngIf="!items.length">
               <h4>Task not created. Please add new</h4>
@@ -44,16 +31,25 @@
         </div>
       </div>
     </div>
-    <!-- <div class="col-md-3 col-sm-3 col-xs-12">
+    <div class="col-md-6 col-sm-6 col-xs-12">
       <div class="x_panel">
         <div class="x_title">
-          <h2>To Do List</h2>
+          <h2>List Completed Tasks</h2>
           <div class="clearfix"></div>
         </div>
         <div class="x_content">
+          <div class="item-group" *ngIf="completedTasks.length">
+            <task-list [items]="completedTasks"
+                       (remove)="this.todoService.removeTask($event)"
+                       (update)="this.todoService.updateTask($event.item, $event.changes)">
+            </task-list>
+          </div>
+          <div class="message" *ngIf="!completedTasks.length">
+            <h4>You haven't comleted tasks.</h4>
+          </div>
         </div>
       </div>
-    </div> -->
+    </div>
   </div>
 
 </div>

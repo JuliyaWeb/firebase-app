@@ -7,22 +7,33 @@
     border: 1px solid #ddd;
     border-bottom: none;
   }
+
+  .odd .task-item {
+    background: #ecf8ff;
+
+    &.editing {
+      background: #f9f9f9;
+      color: #333;
+    }
+  }
+
   .task-item {
     overflow: hidden;
     display: block;
     padding: 5px 15px;
     color: #333;
     border-bottom: 1px solid #ddd;
-
-    &:nth-child(odd) {
-      background: #f9f9f9;
-    }
+    position: relative;
 
     &:hover {
-      background: #ecf8ff;
+      background: rgb(25, 191, 230);
+      color: #fff;
     }
 
     &.completed {
+      background: #f7f7f7;
+      color: #73879C;
+
       .task-item__button .icon {
         display: block;
       }
@@ -34,7 +45,7 @@
     }
 
     .cell {
-      display: inline-block;
+      display: flex;
     }
 
     .task-item__button {
@@ -59,9 +70,19 @@
 
     .remove {
       cursor: pointer;
+    }
 
-      &:hover {
-        color: red;
+    .center-col {
+      padding-right: 35px;
+
+      form,
+      input {
+        width: 100%;
+      }
+
+      input {
+        border: none;
+        background: none;
       }
     }
 
@@ -70,7 +91,16 @@
     }
 
     .left-col {
-      float: right;
+      position: absolute;
+      right: 15px;
+      top: 5px;
+
+      .icon {
+        margin-right: 6px;
+        line-height: 1px;
+        font-size: 16px;
+        cursor: pointer;
+      }
     }
   }
 
@@ -85,6 +115,7 @@
         border-bottom: 1px solid #999;
       }
     }
+
     .submit {
       background: none;
       box-shadow: none;

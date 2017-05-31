@@ -11066,23 +11066,32 @@ table thead .checkbox.radio { margin-top:-7px;margin-top:-21px; }
   border: 1px solid #ddd;
   border-bottom: none; }
 
+.todo-list .odd .task-item {
+  background: #ecf8ff; }
+  .todo-list .odd .task-item.editing {
+    background: #f9f9f9;
+    color: #333; }
+
 .todo-list .task-item {
   overflow: hidden;
   display: block;
   padding: 5px 15px;
   color: #333;
-  border-bottom: 1px solid #ddd; }
-  .todo-list .task-item:nth-child(odd) {
-    background: #f9f9f9; }
+  border-bottom: 1px solid #ddd;
+  position: relative; }
   .todo-list .task-item:hover {
-    background: #ecf8ff; }
-  .todo-list .task-item.completed .task-item__button .icon {
-    display: block; }
-  .todo-list .task-item.completed .task-item__title {
-    text-decoration: line-through;
+    background: #19bfe6;
+    color: #fff; }
+  .todo-list .task-item.completed {
+    background: #f7f7f7;
     color: #73879C; }
+    .todo-list .task-item.completed .task-item__button .icon {
+      display: block; }
+    .todo-list .task-item.completed .task-item__title {
+      text-decoration: line-through;
+      color: #73879C; }
   .todo-list .task-item .cell {
-    display: inline-block; }
+    display: flex; }
   .todo-list .task-item .task-item__button {
     height: 21px;
     width: 21px;
@@ -11097,12 +11106,25 @@ table thead .checkbox.radio { margin-top:-7px;margin-top:-21px; }
       color: #19bfe6; }
   .todo-list .task-item .remove {
     cursor: pointer; }
-    .todo-list .task-item .remove:hover {
-      color: red; }
+  .todo-list .task-item .center-col {
+    padding-right: 35px; }
+    .todo-list .task-item .center-col form,
+    .todo-list .task-item .center-col input {
+      width: 100%; }
+    .todo-list .task-item .center-col input {
+      border: none;
+      background: none; }
   .todo-list .task-item .right-col {
     float: left; }
   .todo-list .task-item .left-col {
-    float: right; }
+    position: absolute;
+    right: 15px;
+    top: 5px; }
+    .todo-list .task-item .left-col .icon {
+      margin-right: 6px;
+      line-height: 1px;
+      font-size: 16px;
+      cursor: pointer; }
 
 .todo-list .task-form .field {
   padding: 0; }

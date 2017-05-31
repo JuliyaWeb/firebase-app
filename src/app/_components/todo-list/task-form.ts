@@ -1,27 +1,22 @@
-import { Component, OnInit } from '@angular/core';
-import { TodoListService } from '../../_services/todo.service';
-import { Task } from '../../_models/task';
-import { NgForm } from '@angular/forms';
+import {Component, EventEmitter, Output} from '@angular/core';
+import {Task} from '../../_models/task';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'task-form',
   templateUrl: './task-form.html',
-  providers: [TodoListService]
 })
-export class TaskFormComponent implements OnInit {
+export class TaskFormComponent {
 
   items: Task;
   model: any = {};
-
-  constructor(private todoServise: TodoListService) {
-  }
-
-  ngOnInit() {
-  }
+  title: string;
+  @Output() createTask = new EventEmitter();
 
   addTask(form: NgForm) {
-    if (this.model.title) {
-      this.todoServise.createTask(this.model.title);
+    if (this.model.title.length) {
+      this.title = this.model.title.trim();
+      this.createTask.emit(this.title);
     }
     form.onReset();
   }

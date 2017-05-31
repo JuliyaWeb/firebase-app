@@ -28,7 +28,7 @@ export class TodoListService {
     return this.tasksAll.remove(task.$key);
   }
 
-  // updateTask(task: ITask, changes: any): firebase.Promise<any> {
-  //   return this.tasks$.update(task.$key, changes);
-  // }
+  updateTask(task: Task, changes: any): firebase.Promise<any> {
+    return this.tasksAll.update(task.$key, changes);
+  }
 }

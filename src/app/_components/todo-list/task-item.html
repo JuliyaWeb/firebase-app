@@ -1,0 +1,28 @@
+<div class="task-item" [ngClass]="{'completed': item.completed, 'editing': editing}">
+  <div class="cell right-col">
+    <button class="task-item__button" type="button" (click)="toggleStatus();">
+      <span class="icon"><i class="fa fa-check"></i></span>
+    </button>
+  </div>
+  <div class="cell center-col">
+    <div class="task-item__title" *ngIf="!editing">
+      {{item.title}}
+    </div>
+    <form *ngIf="editing" (ngSubmit)="saveTitle()">
+      <input [(ngModel)]="title" 
+             (keyup.escape)="stopEditing()"
+             autocomplete="off"
+             autoFocus
+             class="task-item__input"
+             name="title"
+             [value]="title"
+             type="text">
+    </form>
+  </div>
+  <div class="cell left-col">
+    <span *ngIf="editing" class="icon" (click)="stopEditing()"><i class="fa fa-close"></i></span>
+    <span *ngIf="!editing" class="icon icon-edit" (click)="editTitle()"><i class="fa fa-pencil"></i></span>
+    <span *ngIf="!editing" class="glyphicon glyphicon-trash remove" aria-hidden="true"
+          (click)="remove.emit()"></span>
+  </div>
+</div>

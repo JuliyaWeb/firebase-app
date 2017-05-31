@@ -21,7 +21,9 @@ import {
   UserDetailComponent,
   AuthenticationComponent,
   TodoListComponent,
-  TaskFormComponent
+  TaskFormComponent,
+  TaskItemComponent,
+  TaskListComponent
 } from "./_components/index";
 
 // Firebase export the config
@@ -54,6 +56,8 @@ export const firebaseConfig = {
     AuthenticationComponent,
     TodoListComponent,
     TaskFormComponent,
+    TaskItemComponent,
+    TaskListComponent
   ],
   providers: [
     AuthGuard,
