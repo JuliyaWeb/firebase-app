@@ -19,7 +19,6 @@ export class TaskItemComponent {
   editTitle(): void {
     this.editing = true;
     this.title = this.item.title;
-    console.log('edit', this.title);
   }
 
   saveTitle(): void {
@@ -27,7 +26,6 @@ export class TaskItemComponent {
       const title: string = this.title.trim();
       if (title.length && title !== this.item.title) {
         this.update.emit({title});
-        console.log('ddd', title);
       }
       this.stopEditing();
     }

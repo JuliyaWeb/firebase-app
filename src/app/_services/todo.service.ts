@@ -20,8 +20,13 @@ export class TodoListService {
     this.tasksAll = this.af.database.list('tasksUsers');
   }
 
-  createTask(title) {
-    this.tasksAll.push(new Task(title, this.auth.uid));
+  createTask(event) {
+    if (event.date) {
+      this.tasksAll.push(new Task(event.title, this.auth.uid, event.date));
+    } else {
+      this.tasksAll.push(new Task(event.title, this.auth.uid));
+    }
+
   }
 
   removeTask(task: Task) {

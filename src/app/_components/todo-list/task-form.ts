@@ -10,13 +10,14 @@ export class TaskFormComponent {
 
   items: Task;
   model: any = {};
-  title: string;
   @Output() createTask = new EventEmitter();
 
   addTask(form: NgForm) {
-    if (this.model.title.length) {
-      this.title = this.model.title.trim();
-      this.createTask.emit(this.title);
+    let title: string = this.model.title.trim();
+    if (this.model.date) {
+      this.createTask.emit({title: title, date: this.model.date});
+    } else {
+      this.createTask.emit({title: title});
     }
     form.onReset();
   }

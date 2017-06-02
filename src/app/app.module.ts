@@ -7,6 +7,8 @@ import {AuthGuard} from "./_guards/auth.guard";
 import {ChartsModule} from 'ng2-charts/ng2-charts';
 // FireBase
 import {AngularFireModule} from 'angularfire2';
+// Calendar
+import {CalendarComponent} from "angular2-fullcalendar/src/calendar/calendar";
 // Services
 import {AuthService} from "./_services/auth.service";
 import {UserService} from "./_services/user.service";
@@ -23,7 +25,8 @@ import {
   TodoListComponent,
   TaskFormComponent,
   TaskItemComponent,
-  TaskListComponent
+  TaskListComponent,
+  AppCalendarComponent
 } from "./_components/index";
 
 // Firebase export the config
@@ -57,7 +60,9 @@ export const firebaseConfig = {
     TodoListComponent,
     TaskFormComponent,
     TaskItemComponent,
-    TaskListComponent
+    TaskListComponent,
+    CalendarComponent,
+    AppCalendarComponent
   ],
   providers: [
     AuthGuard,

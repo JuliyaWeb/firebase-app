@@ -7,9 +7,10 @@
   <div class="cell center-col">
     <div class="task-item__title" *ngIf="!editing">
       {{item.title}}
+      {{item.timestamp | date }}
     </div>
     <form *ngIf="editing" (ngSubmit)="saveTitle()">
-      <input [(ngModel)]="title" 
+      <input [(ngModel)]="title"
              (keyup.escape)="stopEditing()"
              autocomplete="off"
              autoFocus

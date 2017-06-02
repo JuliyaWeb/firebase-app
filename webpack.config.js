@@ -12,7 +12,7 @@ module.exports = {
       './resources/themes/gentelella/vendors/bootstrap/dist/css/bootstrap.css',
       './resources/themes/gentelella//vendors/font-awesome/css/font-awesome.min.css',
       './resources/themes/gentelella/build/css/custom.css',
-      './resources/sass/global.scss',
+      './resources/sass/global.scss'
     ]
   },
   output: {

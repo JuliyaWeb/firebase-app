@@ -2,6 +2,7 @@
   <div class="col-md-8 col-sm-8 col-xs-12 field">
     <input name="title" #title="ngModel" [(ngModel)]="model.title" type="text" class="form-control"
            placeholder="What needs to be done?" required/>
+    <input name="date" #date="ngModel" [(ngModel)]="model.date" type="date" class="form-control"/>
   </div>
   <div class="col-md-4 col-sm-4 col-xs-12 field">
     <button class="submit" type="submit">
