@@ -11127,12 +11127,18 @@ table thead .checkbox.radio { margin-top:-7px;margin-top:-21px; }
       cursor: pointer; }
 
 .todo-list .task-form .field {
-  padding: 0; }
+  padding: 0;
+  position: relative;
+  display: flex;
+  float: left; }
   .todo-list .task-form .field input {
     border: 0;
     width: 100%;
     box-shadow: none;
     border-bottom: 1px solid #999; }
+
+.todo-list .task-form .mydp {
+  border: none; }
 
 .todo-list .task-form .submit {
   background: none;
@@ -11142,6 +11148,60 @@ table thead .checkbox.radio { margin-top:-7px;margin-top:-21px; }
   .todo-list .task-form .submit i {
     color: #19bfe6;
     font-size: 33px; }
+
+.todo-list .task-form .calendar-field {
+  max-width: 135px; }
+
+.todo-list .fc-more-popover .fc-event-container .fc-event {
+  position: relative; }
+
+.todo-list .fc-view-container .fc-event {
+  background: #19bfe6;
+  border-color: #19bfe6;
+  padding: 5px 8px;
+  margin-bottom: 8px;
+  border-radius: 2px;
+  font-weight: bold; }
+  .todo-list .fc-view-container .fc-event .fc-content {
+    word-wrap: normal;
+    white-space: normal; }
+
+.todo-list .fc-view-container table > thead.fc-head {
+  background: rgba(52, 73, 94, 0.94);
+  color: #fff; }
+
+.todo-list .fc-view-container table .fc-day-grid .fc-row:nth-child(odd) {
+  background-color: #f9f9f9; }
+
+.todo-list .fc-view-container table .fc-event-container {
+  position: relative;
+  cursor: pointer; }
+  .todo-list .fc-view-container table .fc-event-container:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border: 0 solid transparent;
+    border-right-width: 12px;
+    border-left-width: 12px;
+    border-bottom: 12px solid #19bfe6;
+    bottom: -23px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto; }
+  .todo-list .fc-view-container table .fc-event-container:hover .fc-event {
+    opacity: 1; }
+  .todo-list .fc-view-container table .fc-event-container .fc-event {
+    position: absolute;
+    opacity: 0;
+    margin: 0;
+    line-height: 1;
+    bottom: -10px;
+    border-radius: 0;
+    padding: 2px 4px; }
+    .todo-list .fc-view-container table .fc-event-container .fc-event span {
+      line-height: 1.2; }
 
 .x_content p {
   font-size: 14px; }

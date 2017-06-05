@@ -9,6 +9,7 @@ import {ChartsModule} from 'ng2-charts/ng2-charts';
 import {AngularFireModule} from 'angularfire2';
 // Calendar
 import {CalendarComponent} from "angular2-fullcalendar/src/calendar/calendar";
+import {MyDatePickerModule} from 'mydatepicker';
 // Services
 import {AuthService} from "./_services/auth.service";
 import {UserService} from "./_services/user.service";
@@ -46,6 +47,7 @@ export const firebaseConfig = {
     FormsModule,
     ChartsModule,
     AngularFireModule.initializeApp(firebaseConfig),
+    MyDatePickerModule,
     routing,
   ],
   declarations: [

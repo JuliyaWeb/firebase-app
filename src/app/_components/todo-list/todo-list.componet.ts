@@ -13,6 +13,7 @@ export class TodoListComponent implements OnInit {
   public completedTasks: Task[] = [];
   public tasks = [];
 
+
   constructor(public todoService: TodoListService, private auth: AuthService) {
   }
 

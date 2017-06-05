@@ -107,6 +107,9 @@
   .task-form {
     .field {
       padding: 0;
+      position: relative;
+      display: flex;
+      float: left;
 
       input {
         border: 0;
@@ -114,6 +117,10 @@
         box-shadow: none;
         border-bottom: 1px solid #999;
       }
+    }
+
+    .mydp {
+      border: none;
     }
 
     .submit {
@@ -125,6 +132,84 @@
       i {
         color: #19bfe6;
         font-size: 33px;
+      }
+    }
+
+    .calendar-field {
+      max-width: 135px;
+    }
+  }
+
+  .fc-more-popover {
+    .fc-event-container {
+      .fc-event {
+        position: relative;
+      }
+    }
+  }
+
+  .fc-view-container {
+    .fc-event {
+      background: #19bfe6;
+      border-color: #19bfe6;
+      padding: 5px 8px;
+      margin-bottom: 8px;
+      border-radius: 2px;
+      font-weight: bold;
+
+      .fc-content {
+        word-wrap: normal;
+        white-space: normal;
+      }
+    }
+
+    table {
+      & > thead.fc-head {
+        background: rgba(52, 73, 94, 0.94);
+        color: #fff;
+      }
+
+      .fc-day-grid .fc-row:nth-child(odd) {
+        background-color: #f9f9f9;
+      }
+
+      .fc-event-container {
+        position: relative;
+        cursor: pointer;
+
+        &:after {
+          content: '';
+          display: block;
+          width: 0;
+          height: 0;
+          border: 0 solid transparent;
+          border-right-width: 12px;
+          border-left-width: 12px;
+          border-bottom: 12px solid #19bfe6;
+          bottom: -23px;
+          position: absolute;
+          left: 0;
+          right: 0;
+          margin: 0 auto;
+        }
+
+        &:hover .fc-event {
+          opacity: 1;
+        }
+
+        .fc-event {
+          position: absolute;
+          opacity: 0;
+          margin: 0;
+          line-height: 1;
+          bottom: -10px;
+          border-radius: 0;
+          padding: 2px 4px;
+
+          span {
+            line-height: 1.2;
+          }
+        }
       }
     }
   }

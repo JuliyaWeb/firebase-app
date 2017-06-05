@@ -1,4 +1,4 @@
-import {Component, Output, Input, EventEmitter} from '@angular/core';
+import {Component, Output, Input, EventEmitter, OnInit} from '@angular/core';
 import {Task} from '../../_models/task';
 
 @Component({
@@ -6,7 +6,7 @@ import {Task} from '../../_models/task';
   template: `
     <div class="task-list">
       <task-item *ngFor="let item of items; let i=index;"
-      [ngClass]="{'odd': i % 2 == 0}"
+                 [ngClass]="{'odd': i % 2 == 0}"
                  [item]="item"
                  (remove)="remove.emit(item)"
                  (update)="update.emit({item: item, changes: $event});">
@@ -16,6 +16,7 @@ import {Task} from '../../_models/task';
   `,
 
 })
+
 export class TaskListComponent {
 
   @Input() items: Task[] = [];
